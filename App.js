@@ -1,20 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react"
+import { StyleSheet, View, FlatList } from "react-native"
+import SiteInput from "./components/SiteInput"
+import SiteItem from "./components/SiteItem"
 
 export default function App() {
+  const [siteCollection, setSiteCollection] = useState([])
+
+  function addSiteHandler(passedSiteObject) {
+    setSiteCollection((currentSiteCollection) => [
+      ...currentSiteCollection,
+      passedSiteObject,
+    ])
+  }
+
+  function deleteSiteHandler() {}
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.appContainer}>
+      <SiteInput onAddSite={addSiteHandler} />
+      <View style={styles.sitesContainer}>
+        <FlatList
+          data={siteCollection}
+          renderItem={(itemData) => {
+            return (
+              <SiteItem text={itemData.item} onDeleteItem={deleteSiteHandler} />
+            )
+          }}
+          keyExtractor={(item, index) => {
+            return item.id
+          }}
+          alwaysBounceVertical={false}
+        />
+      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 50,
+    paddingHorizontal: 16,
   },
-});
+  sitesContainer: {
+    flex: 5,
+  },
+})
