@@ -11,34 +11,19 @@ export default function App() {
       ...currentSiteCollection,
       passedSiteObject,
     ])
+    console.log(siteCollection)
   }
-
-  function deleteSiteHandler() {}
 
   return (
     <View style={styles.appContainer}>
       <SiteInput onAddSite={addSiteHandler} />
-      <View style={styles.sitesContainer}>
-        <FlatList
-          data={siteCollection}
-          renderItem={(itemData) => {
-            return (
-              <SiteItem text={itemData.item} onDeleteItem={deleteSiteHandler} />
-            )
-          }}
-          keyExtractor={(item, index) => {
-            return item.id
-          }}
-          alwaysBounceVertical={false}
-        />
-      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   appContainer: {
-    flex: 1,
+    flex: 2,
     paddingTop: 50,
     paddingHorizontal: 16,
   },
