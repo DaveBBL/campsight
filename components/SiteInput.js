@@ -6,7 +6,7 @@ import { uuid } from "../utilities/Uuid";
 function SiteInput(props) {
   const [siteNumber, setSiteNumber] = useState("");
   const [arrivalDate, setArrivalDate] = useState("");
-  const [stayDays, setStayDays] = useState("1");
+  const [stayDays, setStayDays] = useState("");
   const [verification, setVerification] = useState("");
 
   function clearTextInputs() {
@@ -66,9 +66,9 @@ function SiteInput(props) {
             value={verification}
           />
         </View>
-        <View style={styles.button}>
-          <Button title="Add Site" onPress={addSiteHandler} />
-        </View>
+      </View>
+      <View style={styles.button}>
+        <Button title="Add Site" onPress={addSiteHandler} />
       </View>
     </>
   );
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 24,
     fontWeight: "bold",
-    textAlign: "right",
+    textAlign: "center",
     marginRight: 12,
   },
   inputContainer: {
@@ -103,10 +103,12 @@ const styles = StyleSheet.create({
     width: "60%",
     marginRight: 8,
     padding: 6,
+    textAlign: "center",
   },
   button: {
-    marginRight: 10,
-    marginTop: 110,
+    marginTop: 8,
+    width: "100%",
+    alignItems: "center",
   },
 });
 
