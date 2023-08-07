@@ -34,38 +34,30 @@ function SiteInput(props) {
     <>
       <Text style={styles.header}>Site Survey</Text>
       <View style={styles.inputContainer}>
-        <View style={styles.inputSubContainer}>
-          <Text style={styles.textLabel}>Site Number</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Site Number"
-            onChangeText={(newText) => setSiteNumber(newText)}
-            value={siteNumber}
-          />
-          <Text style={styles.textLabel}>Arrival Date</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Arrival Date"
-            onChangeText={(newText) => setArrivalDate(newText)}
-            value={arrivalDate}
-          />
-        </View>
-        <View style={styles.inputSubContainer}>
-          <Text style={styles.textLabel}>Days Staying</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Days Staying"
-            onChangeText={(newText) => setStayDays(newText)}
-            value={stayDays}
-          />
-          <Text style={styles.textLabel}>Registration</Text>
-          <TextInput
-            style={styles.textInput}
-            placeholder="Verification"
-            onChangeText={(newText) => setVerification(newText)}
-            value={verification}
-          />
-        </View>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Site Number"
+          onChangeText={(newText) => setSiteNumber(newText)}
+          value={siteNumber}
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Arrival Date"
+          onChangeText={(newText) => setArrivalDate(newText)}
+          value={arrivalDate}
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Days Staying"
+          onChangeText={(newText) => setStayDays(newText)}
+          value={stayDays}
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Verification"
+          onChangeText={(newText) => setVerification(newText)}
+          value={verification}
+        />
       </View>
       <View style={styles.button}>
         <Button title="Add Site" onPress={addSiteHandler} />
@@ -81,19 +73,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
-    marginRight: 12,
+    margin: 12,
   },
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 4,
-  },
-  inputSubContainer: {
-    flex: 1,
+    flex: 0,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginBottom: 4,
+    padding: 6,
+    backgroundColor: "#336699",
   },
   textLabel: {
     padding: 4,
@@ -103,12 +92,15 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#cccccc",
     width: "60%",
-    marginRight: 8,
+    margin: 8,
     padding: 6,
     textAlign: "center",
+    fontSize: 20,
+    backgroundColor: "#99CCFF",
   },
   button: {
     marginTop: 8,
+    marginBottom: 4,
     width: "100%",
     alignItems: "center",
   },
