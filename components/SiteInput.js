@@ -34,7 +34,7 @@ function SiteInput(props) {
     <>
       <Text style={styles.header}>Site Survey</Text>
       <View style={styles.inputContainer}>
-        <View style={styles.InputSubContainer}>
+        <View style={styles.inputSubContainer}>
           <Text style={styles.textLabel}>Site Number</Text>
           <TextInput
             style={styles.textInput}
@@ -50,7 +50,7 @@ function SiteInput(props) {
             value={arrivalDate}
           />
         </View>
-        <View style={styles.InputSubContainer}>
+        <View style={styles.inputSubContainer}>
           <Text style={styles.textLabel}>Days Staying</Text>
           <TextInput
             style={styles.textInput}
@@ -74,6 +74,8 @@ function SiteInput(props) {
   );
 }
 
+export default SiteInput;
+
 const styles = StyleSheet.create({
   header: {
     fontSize: 24,
@@ -87,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 4,
   },
-  InputSubContainer: {
+  inputSubContainer: {
     flex: 1,
     flexDirection: "column",
     justifyContent: "flex-start",
@@ -111,5 +113,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-export default SiteInput;
